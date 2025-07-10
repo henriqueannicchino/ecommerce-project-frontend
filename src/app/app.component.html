@@ -27,16 +27,20 @@
 
             <span style="display: flex; align-items: center">
               @if(loggedUser) {
-              <div class="dropdown">
+              <div class="dropdown" style="margin-right: 8px;">
                 <span>{{ loggedUser }}</span>
                 <div class="dropdown-content">
                   <p class="dropdownItem" (click)="logout()">Logout</p>
                 </div>
               </div>
               } @else {
-              <a style="text-decoration: none" routerLink="/login">
+              <a style="text-decoration: none; margin-right: 8px;" routerLink="/login">
                 <span>sign in</span>
               </a>
+              }
+
+              @if(loggedUser) {
+                <button routerLink="/members" class="au-btn-submit">Member</button>
               }
               <app-cart-status></app-cart-status>
             </span>

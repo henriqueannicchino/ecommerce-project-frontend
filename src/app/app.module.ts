@@ -21,9 +21,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import myAppConfig from './config/my-app-config';
 import { LoginComponent } from './components/login/login.component';
 import { customInterceptor } from './interceptor/custom.interceptor';
+import { MembersPageComponent } from './components/members-page/members-page.component';
 
 
 const routes: Routes = [
+  //create guard to check if user is logged
+  //{path: 'members', component: MembersPageComponent, canActivate: []},
+
+  {path: 'members', component: MembersPageComponent},
+
   {path: 'login', component: LoginComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
@@ -47,6 +53,7 @@ const routes: Routes = [
     CartDetailsComponent,
     CheckoutComponent,
     LoginComponent,
+    MembersPageComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
