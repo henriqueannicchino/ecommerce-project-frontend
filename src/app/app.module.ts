@@ -23,10 +23,12 @@ import { LoginComponent } from './components/login/login.component';
 import { customInterceptor } from './interceptor/custom.interceptor';
 import { MembersPageComponent } from './components/members-page/members-page.component';
 import { AuthGuard } from './guards/auth.guard';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 
 const routes: Routes = [
   {path: 'members', component: MembersPageComponent, canActivate: [AuthGuard]},
+  {path: 'order-history', component: OrderHistoryComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
@@ -51,6 +53,7 @@ const routes: Routes = [
     CheckoutComponent,
     LoginComponent,
     MembersPageComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
